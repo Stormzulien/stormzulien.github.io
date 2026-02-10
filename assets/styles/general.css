@@ -1,0 +1,41 @@
+/*
+  Details:
+    Source: "https://stormzulien.github.io/"
+
+    By Stormzulien (Jay)
+
+    Started: 25/01/2026,
+    Last Updated: 09/02/2026
+    
+    (Format: DD/MM/YYYY)
+
+  Notes:
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Comfortaa:wght@300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Noto+Color+Emoji&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --google-green: #0F9D58;
+  --google-yellow: #F4B400;
+  --google-blue: #4285F4;
+  --google-red: #DB4437;
+  /* Source: https://partnermarketinghub.withgoogle.com/brands/google-play/visual-identity/color-palette/ */
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", "Roboto", "Arial", "sans-serif";
+}
+
+* {
+  outline: invert;
+  outline-color: var(--google-blue);
+  outline-width: 4px;
+}
+
+.emoji {
+  font-family: "Noto Color Emoji", Arial, Helvetica, sans-serif;
+}
