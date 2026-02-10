@@ -111,7 +111,7 @@ if (xitter) {
   doc.body.addEventListener("keydown", (event) => {
     if (event.key === "x") {
       twitXLogo.removeAttribute("src");
-      twitXLogo.setAttribute("src", "../assets/media/images/icons/social_icons/twitter-x.svg");
+      twitXLogo.setAttribute("src", "../assets/media/images/icons/social_icons/twitter_x.svg");
       twitXPlatformName.innerText = "X";
       twitX.classList.add("elon");
     }
@@ -171,4 +171,5 @@ function getCurrentTheme() {
 matchMedia("(prefers-color-scheme: dark)")
   .addEventListener("change", () => {
     switchIconTheme(getCurrentTheme() ? true : false);
+
   });
