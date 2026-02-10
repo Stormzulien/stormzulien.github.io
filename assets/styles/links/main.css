@@ -203,7 +203,7 @@ footer {
 }
 
 .elon {
-  background-image: url("../../media/images/elon.png");
+  background-image: url("../../media/images/elonsraeltir/elon_small.webp");
   background-size: cover;
   background-position-y: center;
   background-position-x: center;
@@ -269,4 +269,5 @@ footer {
   .elon .username {
     color: black;
   }
+
 }
