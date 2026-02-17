@@ -110,7 +110,7 @@ const links = [
       altText: "Blogspot Logo"
     },
     title: "I don't use this much",
-    shown: true
+    shown: false
   },
   {
     type: "link",
@@ -125,7 +125,7 @@ const links = [
       altText: "GitHub Logo"
     },
     title: null,
-    shown: true
+    shown: false
   },
   {
     type: "link",
@@ -143,5 +143,6 @@ const links = [
     shown: true
   }
 ];
+
 
 export default links;
