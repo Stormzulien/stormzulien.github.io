@@ -2,8 +2,10 @@
 
 const globalConfig = {
   customLinkStyles: !true,
-  linksOldRedirect: !true
+  linksOldSettings: {
+    redirectToNew: false,
+    showUpdateMsg: true
+  }
 };
-
 
 export default globalConfig;
