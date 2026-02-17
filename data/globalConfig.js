@@ -1,7 +1,9 @@
 "use strict";
 
 const globalConfig = {
-  customLinkStyles: !true
+  customLinkStyles: !true,
+  linksOldRedirect: true
 };
+
 
 export default globalConfig;
