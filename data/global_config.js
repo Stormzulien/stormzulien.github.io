@@ -2,7 +2,8 @@
 
 const globalConfig = {
   customLinkStyles: !true,
-  linksOldRedirect: true
+  linksOldRedirect: !true
 };
+
 
 export default globalConfig;
