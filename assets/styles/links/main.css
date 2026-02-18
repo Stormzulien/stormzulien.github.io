@@ -289,8 +289,16 @@ body.elon-effect .social-link, body.elon-effect .username {
   color: black;
 }
 
+body.elon-effect .emoji {
+  font-family: "Wingdings";
+}
+
 body.elon-effect main {
   background-color: #ff9d9d60;
+}
+
+body.elon-effect #bio {
+  margin-bottom: 0.1em;
 }
 
 body.elon-effect #deco-clouds * {
@@ -415,8 +423,17 @@ body.elon-effect + html {
     background-attachment: fixed;
   }
 
-  body.elon-effect main{
+  body.elon-effect main {
     background-color: #ff707060;
+  }
+
+  body.elon-effect footer {
+    color: rgb(255, 73, 73);
+    font-weight: bolderx;
+  }
+
+  body.elon-effect #bio {
+    color: red;
   }
 
   body.elon-effect #deco-clouds * {
