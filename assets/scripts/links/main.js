@@ -5,7 +5,7 @@
     By Stormzulien (Jay)
 
     Started: 09/02/2026,
-    Last Updated: 17/02/2026
+    Last Updated: 18/02/2026
     
     (Format: DD/MM/YYYY)
 
@@ -18,6 +18,9 @@ import doc from "../doc.js";
 import globalConfig from "../../../data/global_config.js";
 import links from "../../../data/links/links.js";
 import formatUrl from "../utils/format_url.js";
+
+
+// some uris and stuff
 
 const sources = {
   dataDir: "../data/",
@@ -35,14 +38,19 @@ const sources = {
 
 const linksList = doc.qs("#links-list");
 
-const footerContent = doc.qs("footer").innerHTML;
-const creepyFooterContent = "417e4705aee1415f8583243b8c403af3";
+
+// for special styles on each link
 
 if (globalConfig.customLinkStyles) {
   doc.head.innerHTML += `<link rel="stylesheet" href="${sources.dataDir}links/links_custom_styles.css">`;
 }
 
+
+// Backdrop clouds
+
 function generateClouds() {
+  // Generates the clouds in the backdrop
+
   const decoClouds = doc.qs("#deco-clouds");
 
   let cloudsHTML = "";
@@ -55,6 +63,9 @@ function generateClouds() {
 }
 
 generateClouds();
+
+
+// Generate all the links from links.js
 
 links.forEach(link => {
   let linkHTML = "";
@@ -89,6 +100,9 @@ links.forEach(link => {
   }
 });
 
+
+// For all links with type: "copy":
+
 const jsLinkCopy = doc.qsa(".js-link-copy");
 
 jsLinkCopy.forEach(element => {
@@ -119,42 +133,94 @@ jsLinkCopy.forEach(element => {
   });
 });
 
+
+// Xitter thing
+
 if (globalConfig.xitter) {
+  // Evil Twitter easter egg on X key down
+
   const twitX = doc.qs("a#link-twitter");
   const twitXLogo = doc.qs("a#link-twitter img.social-icon");
   const twitXPlatformName = doc.qs("a#link-twitter span.platform-name");
+  
+  // Make footer text change
+  const footerContent = doc.qs("footer").innerHTML;
+  const creepyFooterContent = "417e4705aee1415f8583243b8c403af3";
+
+  // Get url params
+  const params = new URLSearchParams(document.location.search);
+
+  let urlXitter = JSON.parse(params.get("xitter"));
+  if (typeof urlXitter !== "boolean") {
+    urlXitter = false;
+  }
 
   const hellSound = doc.qs("#hell-ambient-audio");
   // Sound Effect by "https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=23836" freesound_community from Pixabay
 
   hellSound.loop = true;
 
-  function ranChar() { return String.fromCharCode(Math.floor(Math.random() * (10000 - 100 + 1) + 100)) };
+  function evil() {
+    // Turn styles, text and icons evil
 
-  doc.body.addEventListener("keydown", (event) => {
-    if (event.key === "x") {
-      twitXLogo.src = `${sources.assetsDir}${sources.socialIconsDir}${sources.twitX.twitterX}`;
-      twitXPlatformName.innerText = "X";
+    twitXLogo.src = `${sources.assetsDir}${sources.socialIconsDir}${sources.twitX.twitterX}`;
+    twitXPlatformName.innerText = "X";
 
-      doc.footer.innerHTML = `${creepyFooterContent}|ඞ`;
-      twitX.classList.add("elon");
-      doc.body.classList.add("elon-effect");
+    doc.footer.innerHTML = `${creepyFooterContent}|ඞ`;
+    twitX.classList.add("elon");
+    doc.body.classList.add("elon-effect");
+  }
+
+  function normal() {
+    // Return styles, text and icons to normal
+
+    twitXLogo.src = `${sources.assetsDir}${sources.socialIconsDir}${sources.twitX.twitter}`;
+    twitXPlatformName.innerText = "Twitter";
+
+    doc.footer.innerHTML = footerContent; // Restores to original footer content
+    twitX.classList.remove("elon");
+    doc.body.classList.remove("elon-effect");
+  }
+
+  if (urlXitter) {
+    const msg = `[X] x key easter egg activation disabled\nTap screen to start audio`;
+    evil();
+
+    // hellSound.play();
+    // Sound cannot be played without user interacting with the document first.
+    
+    console.warn(msg);
+    doc.body.addEventListener("keydown", (event) => {
+      if (event.key === "x") {
+        console.warn(msg);
+      }
+    });
+
+    doc.body.addEventListener("mousedown", () => {
       hellSound.play();
-    }
-  });
+    });
 
-  doc.body.addEventListener("keyup", (event) => {
-    if (event.key === "x") {
-      twitXLogo.src = `${sources.assetsDir}${sources.socialIconsDir}${sources.twitX.twitter}`;
-      twitXPlatformName.innerText = "Twitter";
+  } else {
+    // If ?xitter=false (normal):
 
-      doc.footer.innerHTML = footerContent;
-      twitX.classList.remove("elon");
-      doc.body.classList.remove("elon-effect");
-      hellSound.pause();
-    }
-  });
+    doc.body.addEventListener("keydown", (event) => {
+      if (event.key === "x") {
+        evil();
+        hellSound.play();
+      }
+    });
+
+    doc.body.addEventListener("keyup", (event) => {
+      if (event.key === "x") {
+        normal();
+        hellSound.pause();
+      }
+    });
+  }
 }
+
+
+// make the "Go home icon" exist
 
 const homeLnkImg = document.createElement("img");
   homeLnkImg.alt = "Home icon";
@@ -162,6 +228,7 @@ const homeLnkImg = document.createElement("img");
   homeLnkImg.src = isDarkTheme() ? sources.homeIcon.dark : sources.homeIcon.light;
 
 doc.qs("#home-lnk").appendChild(homeLnkImg);
+
 
 // Change icon themes
 
@@ -208,8 +275,6 @@ function isDarkTheme() {
     return;
   }
 }
-
-// switchIconTheme(getCurrentTheme() ? true : false);
 
 matchMedia("(prefers-color-scheme: dark)")
   .addEventListener("change", () => {
