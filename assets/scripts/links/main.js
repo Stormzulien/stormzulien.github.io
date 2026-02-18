@@ -129,11 +129,14 @@ if (globalConfig.xitter) {
 
   hellSound.loop = true;
 
+  function ranChar() { return String.fromCharCode(Math.floor(Math.random() * (10000 - 100 + 1) + 100)) };
+
   doc.body.addEventListener("keydown", (event) => {
     if (event.key === "x") {
       twitXLogo.src = `${sources.assetsDir}${sources.socialIconsDir}${sources.twitX.twitterX}`;
       twitXPlatformName.innerText = "X";
-      doc.footer.innerHTML = `${String.fromCharCode(Math.floor(Math.random() * (10000 - 100 + 1) + 100))} ${creepyFooterContent} ඞ`;
+
+      doc.footer.innerHTML = `${creepyFooterContent}|ඞ`;
       twitX.classList.add("elon");
       doc.body.classList.add("elon-effect");
       hellSound.play();
@@ -144,6 +147,7 @@ if (globalConfig.xitter) {
     if (event.key === "x") {
       twitXLogo.src = `${sources.assetsDir}${sources.socialIconsDir}${sources.twitX.twitter}`;
       twitXPlatformName.innerText = "Twitter";
+
       doc.footer.innerHTML = footerContent;
       twitX.classList.remove("elon");
       doc.body.classList.remove("elon-effect");
