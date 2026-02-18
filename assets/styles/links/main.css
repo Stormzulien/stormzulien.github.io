@@ -276,6 +276,10 @@ body.elon-effect {
   background-attachment: fixed;
 }
 
+body.elon-effect * {
+  border-color: red;
+}
+
 body.elon-effect::selection {
   background-color: black;
   color: red;
@@ -304,6 +308,10 @@ body.elon-effect #bio {
 body.elon-effect #deco-clouds * {
   filter: brightness(60%);
   opacity: 60%;
+}
+
+body.elon-effect .social-link {
+  background-color: rgb(206, 206, 206);
 }
 
 body.elon-effect .social-link img {
@@ -335,12 +343,10 @@ body.elon-effect *:focus-visible {
   height: 3em;
   bottom: 0.6em;
   right: 0.8em;
-  z-index: 999;
+  z-index: 998;
   filter: drop-shadow(0px 0px 8px #FFFFFF);
   visibility: hidden;
   user-select: none;
-  cursor: url("../../cursors/samicrogpt/samicrogpt_frames/frame_1.png");
-  animation: samicrogpt-cursor 400ms infinite;
 }
 
 body.elon-effect #palantir-logo {
@@ -438,6 +444,11 @@ body.elon-effect + html {
 
   body.elon-effect #deco-clouds * {
     filter: brightness(30%);
+  }
+
+  body.elon-effect .social-link:not(.elon) {
+    background: #091930;
+    background: linear-gradient(133deg, rgba(9, 25, 48, 1) 0%, rgba(24, 0, 92, 1) 99%);
   }
 
   body.elon-effect .social-link img {
