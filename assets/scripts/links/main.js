@@ -224,7 +224,7 @@ if (globalConfig.xitter) {
 
 const homeLnkImg = document.createElement("img");
   homeLnkImg.alt = "Home icon";
-  homeLnkImg.draggable = "false";
+  homeLnkImg.draggable = false;
   homeLnkImg.src = isDarkTheme() ? sources.homeIcon.dark : sources.homeIcon.light;
 
 doc.qs("#home-lnk").appendChild(homeLnkImg);
@@ -280,3 +280,4 @@ matchMedia("(prefers-color-scheme: dark)")
   .addEventListener("change", () => {
     switchIconTheme(isDarkTheme());
   });
+
