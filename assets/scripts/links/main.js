@@ -33,7 +33,9 @@ const sources = {
   twitX: {
     twitter: "twitter.svg",
     twitterX: "twitter_x.svg"
-  }
+  }, 
+  twtLink: "https://twitter.com/stormzulien",
+  twtXLink: "https://x.com/stormzulien"
 }
 
 const linksList = doc.qs("#links-list");
@@ -165,6 +167,8 @@ if (globalConfig.xitter) {
 
     twitXLogo.src = `${sources.assetsDir}${sources.socialIconsDir}${sources.twitX.twitterX}`;
     twitXPlatformName.innerText = "X";
+    twitX.href = sources.twtXLink;
+    twitX.title = `Go to: "${sources.twtXLink}"`;
 
     doc.footer.innerHTML = `${creepyFooterContent}|ඞ`;
     twitX.classList.add("elon");
@@ -176,6 +180,8 @@ if (globalConfig.xitter) {
 
     twitXLogo.src = `${sources.assetsDir}${sources.socialIconsDir}${sources.twitX.twitter}`;
     twitXPlatformName.innerText = "Twitter";
+    twitX.href = sources.twtLink;
+    twitX.title = `Go to: "${sources.twtLink}"`;
 
     doc.footer.innerHTML = footerContent; // Restores to original footer content
     twitX.classList.remove("elon");
