@@ -140,7 +140,7 @@ const links = [
       altText: "Linktree Logo"
     },
     title: null,
-    shown: true
+    shown: false
   }
 ];
 
