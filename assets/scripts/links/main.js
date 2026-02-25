@@ -160,6 +160,10 @@ if (globalConfig.xitter) {
   const hellSound = doc.qs("#hell-ambient-audio");
   // Sound Effect by "https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=23836" freesound_community from Pixabay
 
+  if (urlXitter) {
+    hellSound.setAttribute("autoplay", true);
+  }
+
   hellSound.loop = true;
 
   function evil() {
@@ -189,13 +193,14 @@ if (globalConfig.xitter) {
   }
 
   if (urlXitter) {
-    const msg = `[X] x key easter egg activation disabled\nTap screen to start audio`;
+    const msg = "[X] x key easter egg activation disabled";
     evil();
 
     // hellSound.play();
     // Sound cannot be played without user interacting with the document first.
     
     console.warn(msg);
+    console.warn("Audio may not start automatically – tap screen to start audio");
     doc.body.addEventListener("keydown", (event) => {
       if (event.key === "x") {
         console.warn(msg);
