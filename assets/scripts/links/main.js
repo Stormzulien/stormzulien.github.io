@@ -23,12 +23,12 @@ import formatUrl from "../utils/format_url.js";
 // some uris and stuff
 
 const sources = {
-  dataDir: "../data/",
-  assetsDir: "../assets/",
+  dataDir: "/data/",
+  assetsDir: "/assets/",
   socialIconsDir: "media/images/icons/social_icons/",
   homeIcon: {
-    light: "../assets/media/images/icons/ui/home_icon_black.svg",
-    dark: "../assets/media/images/icons/ui/home_icon_white.svg"
+    light: "/assets/media/images/icons/ui/home_icon_black.svg",
+    dark: "/assets/media/images/icons/ui/home_icon_white.svg"
   },
   twitX: {
     twitter: "twitter.svg",
