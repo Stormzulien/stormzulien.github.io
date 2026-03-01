@@ -1,0 +1,8 @@
+.yt-link {
+  background-color: rgb(255, 215, 215);
+  transition: all 0.15s;
+}
+
+.yt-link:hover {
+  background-color: rgb(255, 194, 194);
+}
