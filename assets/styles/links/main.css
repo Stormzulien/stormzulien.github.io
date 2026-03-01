@@ -24,7 +24,6 @@ body {
   background: #6590c9;
   background: linear-gradient(118deg, rgba(101, 144, 201, 1) 0%, rgba(187, 181, 255, 1) 99%);
   background-attachment: fixed;
-  min-height: calc(100vh + 100px);
 }
 
 main {
@@ -441,4 +440,5 @@ body.elon-effect + html {
   body.elon-effect .social-link img {
     filter: invert(90%) brightness(60%);
   }
+
 }
