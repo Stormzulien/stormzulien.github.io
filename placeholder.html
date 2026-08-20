@@ -325,6 +325,17 @@
           object-fit: contain;
         }
 
+        .misc-section {
+          background-color: #8fbae260;
+          border-radius: 6px;
+          padding-block: 1px;
+          margin-top: 8px;
+          transition: background-color 0.15s;
+          &:hover {
+            background-color: #4187c960;
+          }
+        }
+
         @media(prefers-color-scheme: dark) {
           html {
             color: white;
@@ -383,35 +394,49 @@
         <img id="img-random">
       </div>
       <div id="about-section">
-        <h3>About</h3>
-        <p>This whole website is kinda shit but I'll get around to improving/remaking it at some point. Everything here is WIP :)</p>
-        <p>I also don't have much to put here yet anyway.</p>
-        <p>(The images on the front page are meaningless)</p>
-        <p>I do not use AI, everything here is written by me <span class="emoji">💙</span></p>
-        <h4>Me</h4>
-        <p>he/they, London <span class="emoji">🇬🇧</span>, 17, neurodivergent, and other things</p>
-        <h4>Where</h4>
-        <p>I'm not really active anywhere right now but here's my <a target="_blank" href="https://twitter.com/Stormzulien" title="X the everything app">Twitter</a>. I don't talk much there, though.</p>
-        <h4>Why</h4>
-        <p>Anxiety</p>
-        <h4>DNI</h4>
-        <p style="opacity: 70%;"><i>(I'll finish this section later)</i></p>
-        <h4>Misc.</h4>
-        <div class="emoji" style="background-color: #8fbae260; border-radius: 6px; padding-block: 1px; margin-top: 8px;">
-          <ul>
-            <li>🥕</li>
-            <li>🟪</li>
-            <li>🟦🟪 🐇</li>
-            <li>🟩🟦🟪</li>
-            <li>🟨🟩🟦🟪</li>
-            <li style="white-space: pre;">🟧🟨🟩🟦🟪🐇             🍎</li>
-            <li style="white-space: pre;">🟥🟧🟨🟩🟦🟪    🐇     🐇  🐈  🐇</li>
-          </ul>
-        </div>
-        <h4>Section 6</h4>
-        <input type="range" value="0" id="opacity-slider">
-        <hr>
-        <div id="about-img-container"></div>
+        <section>
+          <h3>About</h3>
+          <p>This whole website is kinda shit but I'll get around to improving/remaking it at some point. Everything here is WIP :)</p>
+          <p>I also don't have much to put here yet anyway.</p>
+          <p>(The images on the front page are meaningless)</p>
+          <p>I don't use AI, everything here is made by me <span class="emoji">💙</span></p>
+        </section>
+        <section>
+          <h4>Me</h4>
+          <p>he/they, London <span class="emoji">🇬🇧</span>, 17, neurodivergent...</p>
+        </section>
+        <section>
+          <h4>Where</h4>
+          <p>I'm not really active anywhere right now but here's my <a target="_blank" href="https://twitter.com/Stormzulien" title="X the everything app">Twitter</a>. I don't talk much there, though.</p>
+        </section>
+        <section>
+          <h4>Why</h4>
+          <p>Anxiety</p>
+        </section>
+        <section>
+          <h4>DNI</h4>
+          <p style="opacity: 70%;"><i>(I'll finish this section later)</i></p>
+        </section>
+        <section>
+          <h4>Misc.</h4>
+          <div class="misc-section emoji">
+            <ul>
+              <li>🥕</li>
+              <li>🟪</li>
+              <li>🟦🟪 🐇</li>
+              <li>🟩🟦🟪</li>
+              <li>🟨🟩🟦🟪</li>
+              <li style="white-space: pre;">🟧🟨🟩🟦🟪🐇             🍎</li>
+              <li style="white-space: pre;">🟥🟧🟨🟩🟦🟪    🐇     🐇  🐈  🐇</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <h4>Section 6</h4>
+          <input type="range" value="0" id="opacity-slider">
+          <hr>
+          <div id="about-img-container"></div>
+        </section>
       </div>
     </main>
     <br>
