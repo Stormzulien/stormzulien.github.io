@@ -38,6 +38,6 @@ html, body {
   font-family: "Inter", "Roboto", "Arial", "sans-serif";
 }
 
-.emoji {
+emoji, .emoji {
   font-family: "Noto Color Emoji", Arial, Helvetica, sans-serif;
 }
