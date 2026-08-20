@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <title>Placeholder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/assets/media/images/icons/favicons/temp_favicon.png" type="image/x-icon">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/assets/styles/general.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Comfortaa:wght@300..700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Noto+Color+Emoji&family=Noto+Sans+Egyptian+Hieroglyphs&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+        :root {
+          --google-green: #0F9D58;
+          --google-yellow: #F4B400;
+          --google-blue: #4285F4;
+          --google-red: #DB4437;
+          /* Source: https://partnermarketinghub.withgoogle.com/brands/google-play/visual-identity/color-palette/ */
+          
+          scroll-behavior: smooth;
+        }
+
+        * {
+          -webkit-tap-highlight-color: transparent;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        *:focus-visible {
+          outline: 4px dashed orange;
+        }
+
+        html, body {
+          height: 100%;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          font-family: "Inter", "Roboto", "Arial", "sans-serif";
+        }
+
+        .emoji {
+          font-family: "Noto Color Emoji", Arial, Helvetica, sans-serif;
+        }
+
+        html, body, header, footer {
+          width: 100%;
+          height: 100%;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        body {
+          background-color: white;
+        }
+
+        body.wrong {
+          transform: scaleX(-1) rotate(180deg);
+          filter: invert();
+        }
+
+        body.wrong * {
+          background-color: white;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+          margin: 0.3em;
+          padding: 0;
+        }
+
+        a:active {
+          opacity: 0.8;
+        }
+
+        button {
+          cursor: pointer;
+          padding: 10px 16px;
+          font-family: inherit;
+          font-size: inherit;
+          border: none;
+          background-color: var(--google-blue);
+          color: white;
+          border-radius: 9999px;
+          transition: all 0.12s;
+          margin-inline: 1em;
+        }
+
+        button:hover {
+          opacity: 0.86;
+        }
+
+        button:active {
+          opacity: 0.7;
+        }
+
+        button:disabled {
+          cursor: not-allowed;
+          opacity: 0.6;
+        }
+
+        header h4 {
+          color: lightgrey;
+        }
+
+        main {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          padding: 10px;
+        }
+
+        .pages {
+          width: 100%;
+          border-bottom: 1px solid lightgrey;
+          padding: 0;
+          margin: 0;
+          padding-bottom: 4px;
+          margin-bottom: 8px;
+          list-style-type: none;
+          display: flex;
+          flex-direction: row;
+          justify-content: left;
+          align-items: center;
+          column-gap: 8px;
+          color: grey;
+          cursor: default;
+        }
+
+        .pages a {
+          color: #646380;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        .pages a:hover {
+          text-decoration: underline;
+        }
+
+        #img-random {
+          max-width: 400px;
+          width: 100%;
+          display: block;
+        }
+
+        .credits {
+          color: grey;
+          margin: 6px 0px;
+          text-align: right;
+          /* background-color: orange; */
+          max-width: 25em;
+          width: 100%;
+        }
+
+        .credits a {
+          color: grey;
+          text-decoration: none;
+          transition: all 0.12s;
+        }
+
+        .credits a:visited {
+          color: grey;
+          text-decoration: none;
+        }
+
+        .credits a:hover {
+          color: blue;
+        }
+
+        .credits span.no-cred:hover {
+          color: grey;
+        }
+
+        #longer-btn {
+          display: block;
+        }
+
+        #cancel-btn {
+          background-color: var(--google-red);
+          margin: 12px;
+          display: none;
+        }
+
+        #blank-content {
+          height: 0px;
+        }
+
+        #end-msg-1 {
+          display: none;
+          margin-top: 1000px;
+          padding: 18px;
+        }
+
+        div#placeholder-msg {
+          background-color: blanchedalmond;
+          border-top: 1px solid #FFCD90;
+          width: 100%;
+          padding: 0.2em 0;
+          font-size: 0.9em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          filter: brightness(110%);
+          transition: all 0.16s;
+        }
+
+        div#placeholder-msg:hover {
+          filter: none;
+        }
+
+        div#placeholder-msg a {
+          color: #646380;
+          text-decoration: none;
+        }
+
+        div#placeholder-msg a:hover {
+          text-decoration: underline;
+        }
+
+        div#placeholder-msg button#close-btn {
+          padding: 0;
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          right: 0;
+          height: 100%;
+          background: none;
+          border-radius: 0;
+          transition: all 0.16s;
+        }
+
+        div#placeholder-msg button#close-btn:hover {
+          background-color: #FFFFFFCC;
+        }
+
+        div#placeholder-msg button#close-btn:active {
+          opacity: 0.6;
+        }
+
+        div#placeholder-msg button#close-btn img {
+          height: 90%;
+          margin: 0 0.1em;
+        }
+
+        #img-container {
+          overflow: hidden;
+          max-width: 25em;
+          min-height: 24em;
+          max-height: 32em;
+          height: fit-content;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          object-fit: cover;
+        }
+
+        #img-container img {
+          object-fit: cover;
+          display: inline;
+          width: 100%;
+          height: 100%;
+        }
+
+        #about-section {
+          max-width: 25em;
+          max-width: 25em;
+          min-height: 24em;
+          max-height: 26em;
+          height: fit-content;
+          width: 100%;
+          overflow-y: auto;
+          display: none;
+          text-align: left;
+          background-color: gainsboro;
+          padding: 0.6em;
+          border: 1px dashed grey;
+        }
+
+        #about-section p {
+          margin-inline: 0.8em 0.3em;
+          margin-block: 0.4em;
+          font-size: 0.98em;
+        }
+
+        #about-section h4 {
+          margin-top: 1.4em;
+        }
+
+        #timer {
+          font-size: 3em;
+          margin-block: 0.4em;
+          font-family: monospace;
+        }
+
+        .light {
+          color: #9796a0;
+          /* font-style: italic; */
+        }
+
+        #opacity-slider {
+          width: 100%;
+          cursor: grab;
+        }
+
+        #opacity-slider:active {
+          cursor: grabbing;
+        }
+
+        #about-img-container {
+          text-align: center;
+        }
+
+        #about-img-container img {
+          max-height: 20em;
+          max-width: 90%;
+          object-fit: contain;
+        }
+
+        @media(prefers-color-scheme: dark) {
+          html {
+            color: white;
+          }
+
+          body {
+            background-color: black;
+          }
+
+          .credits span.no-cred:hover {
+            color: grey;
+          }
+
+          .pages {
+            color: lightgrey;
+          }
+
+          .pages a, #about-section a {
+            color: lightblue;
+          }
+
+          #about-section {
+            background-color: #0F0329;
+          }
+        }
+
+        @media screen and (width < 430px) {
+          div#placeholder-msg {
+            padding: 0.6em 0;
+            padding-left: 0.4em;
+            justify-content: start;
+          }
+
+          div#placeholder-msg button#close-btn img {
+            height: 80%;
+            margin: 0 0.6em;
+          }
+        }
+      </style>
+  </head>
+  <body>
+    <header>
+      <h1>I will put something here soon</h1>
+      <h4>surely</h4>
+    </header>
+    <br>
+    <main>
+      <ul class="pages" aria-label="Navigation links for the website">
+        <span>Pages:</span>
+        <li><a href="#" onclick="home()">Home</a></li>|
+        <li><a href="#about" onclick="about()">About</a></li>|
+        <li><a href="/links" target="_parent">Links</a></li>|
+        <li><a href="https://stormzulien.straw.page" target="_parent">Strawpage</a></li>
+      </ul>
+      <div id="img-container" aria-label="A random irrelevant/decorative image here" aria-live="polite">
+        <img id="img-random">
+      </div>
+      <div id="about-section">
+        <h3>About</h3>
+        <p>This whole website is kinda shit but I'll get around to improving/remaking it at some point. Everything here is WIP :)</p>
+        <p>I also don't have much to put here yet anyway.</p>
+        <p>(The images on the front page are meaningless)</p>
+        <h4>Me</h4>
+        <p>he/they, London <span class="emoji">🇬🇧</span>, 17, neurodivergent, and other things</p>
+        <h4>Where</h4>
+        <p>I'm not really active anywhere right now but here's my <a target="_blank" href="https://twitter.com/Stormzulien" title="X the everything app">Twitter</a>. I don't talk much there, though.</p>
+        <h4>Why</h4>
+        <p>Anxiety</p>
+        <h4>DNI</h4>
+        <p style="opacity: 70%;"><i>(I'll finish this section later)</i></p>
+        <h4>Misc.</h4>
+        <div class="emoji" style="background-color: #8fbae260; border-radius: 6px; padding-block: 1px; margin-top: 8px;">
+          <ul>
+            <li>🥕</li>
+            <li>🟪</li>
+            <li>🟦🟪 🐇</li>
+            <li>🟩🟦🟪</li>
+            <li>🟨🟩🟦🟪</li>
+            <li style="white-space: pre;">🟧🟨🟩🟦🟪🐇             🍎</li>
+            <li style="white-space: pre;">🟥🟧🟨🟩🟦🟪    🐇     🐇  🐈  🐇</li>
+          </ul>
+        </div>
+        <h4>Section 6</h4>
+        <input type="range" value="0" id="opacity-slider">
+        <hr>
+        <div id="about-img-container"></div>
+      </div>
+    </main>
+    <br>
+    <footer> 
+      <p id="end-msg-0">(this is the end of the page)</p>
+      <button id="longer-btn" title="longer button">Make it longer</button>
+      <button id="cancel-btn" title="cancel button">Cancel</button>
+      <br>
+      <div id="blank-content" title="Amazing Content #WOW"></div>
+      <p id="end-msg-1">(this is now the end of the page)</p>
+    </footer>
+
+    <script>
+      "use strict";
+        
+      const longerBtn = $("#longer-btn");
+      let longerBtnClickCount = 0;
+
+      const blankContent = $("#blank-content");
+      const endMsg_0 = $("#end-msg-0");
+      const endMsg_1 = $("#end-msg-1");
+      const cancelBtn = $("#cancel-btn");
+
+      blankContent.height("40px");
+
+      if (localStorage.getItem("aaaaa")) {
+        document.querySelectorAll("script").forEach(e => e.remove());
+        document.body.innerHTML = `<div id="banned" style="position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column;"><p>You have been BANNED from this website.<br>Do NOT come back.</p><div><button onclick="location.replace('https://store.steampowered.com/app/2357570/Overwatch/')">OK</button><button style="pointer-events: none;">No</button></div></div>`;
+      }
+
+      function rand(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
+      }
+
+      let appealTime;
+
+      if (rand(1, 5) !== rand(1, 5)) { // normal
+        appealTime = Number(localStorage.getItem("appealTime")) || rand(18000000000, 2524608000000000);
+      } else if (rand(1, 30) === rand(1, 30)) { // lucky
+        appealTime = Number(localStorage.getItem("appealTime")) || 30000;
+      } else if (rand(1, 20) === rand(1, 20)) { // very lucky
+        appealTime = Number(localStorage.getItem("appealTime")) || rand(1000, 12345678901**10);
+      } else { // unlucky
+        appealTime = Number(localStorage.getItem("appealTime")) || rand(1000000000000000, 100000000000000000000);
+      }
+      
+      localStorage.setItem("appealTime", String(appealTime));
+      // const appealTime = 30000;
+
+      if (JSON.parse(localStorage.getItem("pageLengthened"))) {
+        pageLengthened(
+          "You chose to lengthen the page.<br>This cannot be undone."
+        );
+
+        const appealLink = $("<a></a>")
+          .text("Appeal")
+          .attr({
+            title: "this is a <a>",
+            href: "#appeal-link",
+            id: "appeal-link"
+          }).click(() => {
+            const captcha = prompt("[CAPTCHA]\nCount anything that closely resembles an invisible hippopotamus in this image:").toLowerCase();
+            if (["no image", "-1", "pigeon", "π", "pi", "1/2", "0.5"].some(t => captcha.includes(t))) {
+              localStorage.setItem("aaaaa", "text");
+              alert("[CAPTCHA]\nFuck you");
+              location.replace("https://w.wiki/SYCQ");
+            } else {
+              alert("[CAPTCHA]\nIncorrect. You have been verified.");
+              appeal();
+            }
+          });
+
+        longerBtn.after(appealLink);
+        appealLink.before("<p id='appeal-msg'>You may request to re-shorten the page:</p>");
+
+        if (localStorage.getItem("initialAppealTime")) {
+          appeal();
+        }
+
+        function appeal() {
+          const initialAppealTime = Number(localStorage.getItem("initialAppealTime")) || new Date().getTime();
+          localStorage.setItem("initialAppealTime", String(initialAppealTime));
+
+          const timer = $("<span></span>")
+            .attr({
+              id: "timer"
+            });
+
+          function updateTimer() {
+            const timeLeft = appealTime - (new Date().getTime() - initialAppealTime);
+
+            const s = String(Math.floor((timeLeft / 1000) % 60).toLocaleString()).padStart(2, "0");
+            const m = String(Math.floor((timeLeft / (1000 * 60)) % 60).toLocaleString()).padStart(2, "0");
+            const h = String(Math.floor((timeLeft / (1000 * 60 * 60)) % 24).toLocaleString()).padStart(2, "0");
+            const d = String(Math.floor((timeLeft / (1000 * 60 * 60 * 24)) % 365).toLocaleString());
+            const y = String(Math.floor(timeLeft / (1000 * 60 * 60 * 24 * 365)).toLocaleString());
+
+            timer.html(`${y}<span class="light">y</span> ${d}<span class="light">d</span> ${h}<span class="light">h</span> ${m}<span class="light">m</span> ${s}<span class="light">s</span>`);
+
+            if (!rand(0, 99)) {
+              appealTime += appealTime;
+              localStorage.setItem("appealTime", String(appealTime));
+            }
+
+            if (timeLeft <= 0) {
+              clearInterval(intervalId);
+              timer.text("The page will be shortened in a few moments.");
+
+              setTimeout(() => {
+                localStorage.removeItem("pageLengthened");
+                localStorage.removeItem("appealTime");
+                localStorage.removeItem("initialAppealTime");
+                location.reload();
+              }, 1500);
+            }
+          }
+
+          let intervalId;
+
+          updateTimer();
+          intervalId = setInterval(updateTimer, 1000);
+
+          $("#appeal-link").remove();
+          $("#appeal-msg").html("You have appealed to re-shorten the page.<br>Please wait for the time displayed above.");
+          $("#longer-btn").after(timer);
+        }
+      }
+
+      longerBtn.click(() => {
+        if (longerBtnClickCount === 0) {
+
+          cancelBtn.css({ display: "initial" });
+          longerBtn.html("Are you sure?<br>This cannot be undone.")
+            .attr({ title: "currently a longer button" });
+
+          longerBtnClickCount++;
+
+        } else if (longerBtnClickCount === 1) {
+
+          localStorage.setItem("pageLengthened", "true");
+
+          pageLengthened(
+            "The page has been made longer.<br>Please enjoy the great lengthiness of your page.",
+          );
+
+        }
+      });
+
+      function wrong() {
+        const wrongMode = localStorage.getItem("wrong");
+
+        if (wrongMode === "true" || wrongMode === "1") {
+          $("body").addClass("wrong");
+        } else {
+          $("body").removeClass("wrong");
+        }
+      }
+
+      wrong();
+
+      function pageLengthened(buttonText) {
+        cancelBtn.css({ display: "none" });
+        blankContent.height(`${1000}px`);
+        endMsg_1.css({ display: "initial" });
+
+        endMsg_0.text("(this is no longer the end of the page)");
+
+        longerBtn.attr({ title: "no longer a longer button" })
+          .attr({ disabled: true })
+          .html(buttonText);
+      }
+
+      cancelBtn.click(() => {
+        cancelBtn.css({ display: "none" });
+
+        longerBtn.html("Make it longer")
+          .attr({ title: "longer button" });
+
+        longerBtnClickCount = 0;
+      });
+
+      // Random Image
+
+      const imgContainer = $("#img-container");
+      const randomImg = $("#img-random");
+      
+      const images = [
+        {
+          src: "/assets/media/images/penguin/penguin_small.webp",
+          alt: "A penguin",
+          title: "A 𝓟𝓮𝓷𝓰𝓾𝓲𝓷.",
+          credit: "https://w.wiki/HbJ7",
+          creditText: "Someone on Wikipedia"
+        },
+        {
+          src: "/assets/media/images/random/llama_and_fox_small.webp",
+          alt: "small Minecraft llama and fox figures with a TY cat plush in the background",
+          title: "✪ ω ✪",
+          credit: "own"
+        },
+        {
+          src: "/assets/media/images/random/axolotl.webp",
+          alt: "Minecraft axolotl lamp sitting on a textbook",
+          title: "*^____^*",
+          credit: "own"
+        },
+        {
+          src: "/assets/media/images/random/creeper.webp",
+          alt: "Minecraft creeper LEGO model",
+          title: "💥",
+          credit: "own"
+        },
+        {
+          src: "/assets/media/images/random/lego_happy_plants.webp",
+          alt: "LEGO plants",
+          title: "LEGO plants",
+          credit: "own"
+        },
+        {
+          src: "/assets/media/images/random/ninjago_book_fs_jay.webp",
+          alt: "LEGO Ninjago “Jay” minifigure",
+          title: "Jay",
+          credit: "own"
+        },
+        {
+          src: "/assets/media/images/random/peppa.webp",
+          alt: "3D Peppa Pig facing forwards with 4 eyes",
+          title: "✂👀🐷👀",
+          credit: "https://www.youtube.com/watch?v=MDvWh37c3cE",
+          creditText: "Surreal Entertainment / YouTube"
+        },
+        {
+          src: "/assets/media/images/random/2025-11-07_19.23.04.png",
+          alt: "A screenshot of Minecraft, in the night, with a Copper Golem looking at a fox sleeping of a pile of rocks, with the moon behind them. They are in a taiga biome",
+          title: "🤖 👁-> 🦊",
+          credit: "own"
+        },
+        {
+          src: "/assets/media/images/random/sky_2.png",
+          alt: "Close up of the sky, from Google Maps Street View, little orange man dropped on random location in northern Scotland",
+          title: "☁☁☁☁☁☁☁☁☁☁☁☁☁☁☁☁",
+          credit: "https://maps.app.goo.gl/1EgBrhDc6qD2o4Do8",
+          creditText: "Google Street View"
+        },
+        {
+          src: "/assets/media/images/random/love_powerpnt.png",
+          alt: "That hearl locket with the PowerPoint logo on the left and badly cropped red roses on the right",
+          title: "💝💓❤💟💟💌❣♥💘🥰",
+          credit: "own"
+        },
+        {
+          src: "/assets/media/images/random/nasa_pride_flag.jpg",
+          alt: "Pride flag made using NASA imagery",
+          title: "Pride flag made using NASA imagery",
+          credit: "https://web.archive.org/web/20250129182253/https://svs.gsfc.nasa.gov/14627/",
+          creditText: "NASA"
+        },
+        {
+          src: "/assets/media/images/random/chicks_wow.png",
+          alt: "thing made using Minecraft baby chickens",
+          title: "thing made using Minecraft baby chickens",
+          credit: "own",
+          creditText: "WOW!! Chicks!!!"
+        },
+        {
+          src: "/assets/media/images/random/mc_cat_irl.webp",
+          alt: "realistic Minecraft cat",
+          title: "monstrosity",
+          credit: "https://www.behance.net/gallery/49008983/Minecraft-in-real-life-(ANICUBE)",
+          creditText: "Aditya Aryanto"
+        }
+      ];
+
+      const random = Math.floor(Math.random() * images.length);
+
+      const image = images[random];
+
+      randomImg.attr({
+        src: image.src,
+        alt: image.alt,
+        title: image.title
+      });
+
+      const creditsElem = $("<span />", {
+        class: "credits",
+        "aria-label": "Credits for the image above"
+      });
+
+      if (image.credit === "own") {
+        creditsElem.html(`[<span class="no-cred" title="Credits">${image.creditText || "My Image"}</span>]`);
+      } else if (image.credit) {
+        if (image.creditText) {
+          creditsElem.html(`
+            [<a 
+              href="${image.credit}"
+              target="_blank"
+              title="Credits"
+            >Source: ${image.creditText}</a>]
+          `.trim());
+        } else {
+          creditsElem.html(`
+            [<a 
+              href="${image.credit}"
+              target="_blank"
+              title="Credits"
+            >Source</a>]
+          `.trim());
+        }
+      } else {
+        creditsElem.html('[<span class="no-cred">Unknown</span>]');
+      }
+
+      imgContainer.after(creditsElem);
+
+      // Message
+
+      const showMsg = false;
+
+      let msgClosed = JSON.parse(localStorage.getItem("msgDismissed")) || !showMsg;
+
+      if (!msgClosed && showMsg) {
+
+        const placeholderMsg = $('<div id="placeholder-msg"/>')
+          .html(`
+            <span>
+              This was the old homepage.
+              <a href="/">
+                Here's the new one!
+              </a>
+            </span>
+
+            <button id="close-btn" title="Close message">
+              <img
+                alt="Close icon"
+                draggable="false"
+                src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2240px%22%20viewBox%3D%220%20-960%20960%20960%22%20width%3D%2240px%22%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22m251.33-204.67-46.66-46.66L433.33-480%20204.67-708.67l46.66-46.66L480-526.67l228.67-228.66%2046.66%2046.66L526.67-480l228.66%20228.67-46.66%2046.66L480-433.33%20251.33-204.67Z%22%2F%3E%3C%2Fsvg%3E"
+              >
+            </button>
+          `);
+
+        $("body").append(placeholderMsg);
+
+        const closeBtn = $("#close-btn");
+        const msg = $("#placeholder-msg");
+      
+        closeBtn.click(() => {
+          msg.remove();
+          msgClosed = true;
+          localStorage.setItem("msgDismissed", JSON.stringify(msgClosed));
+        });
+      }
+
+      function aa(ª) { return ba; }
+
+      // about
+
+      const aboutImgContainer = $("#about-img-container");
+      const image2 = images[Math.floor(Math.random() * images.length)];
+      const img = $("<img />").attr({
+        src: image2.src,
+        alt: image2.alt,
+        title: image2.title
+      });
+
+      aboutImgContainer.append(img);
+
+      const opacitySlider = $("#opacity-slider");
+
+      opacitySlider.val(Math.floor(Math.random() * 8) + 1);
+
+      function setOpacity() { img.css("opacity", opacitySlider.val() + "%"); }
+      setOpacity();
+
+      opacitySlider.on("input", setOpacity);
+
+      function about() {
+        $("#img-container").hide()
+        $("span.credits").hide();
+        $("#about-section").show();
+      }
+
+      function home() {
+        $("#img-container").show()
+        $("span.credits").show();
+        $("#about-section").hide();
+      }
+
+      // don't look please
+
+      switch (location.hash) {
+        case "#home": home(); break;
+        case "#about": about(); break;
+        case "#links": location.replace("/links"); break;
+        case "#strawpage": location.replace("https://stormzulien.straw.page/"); break;
+        default: break;
+      }
+    </script>
+  </body>
+</html>

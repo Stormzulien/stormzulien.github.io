@@ -1,0 +1,185 @@
+@font-face {
+  font-family: Wingdings;
+  src: url(/assets/fonts/wingdings/wingdings.woff2);
+}
+
+body.elon-effect::selection {
+  background-color: black !important;
+  color: red !important;
+}
+
+.elon {
+  background-image: url("../../media/images/elonsraeltir/elon_small.webp");
+  background-size: cover;
+  background-position-y: center;
+  background-position-x: center;
+}
+
+body.elon-effect,
+body.elon-effect * {
+  cursor: url("../../cursors/samicrogpt/samicrogpt_frames/frame_01.png");
+  animation: samicrogpt-cursor 400ms steps(1) infinite;
+}
+
+@keyframes samicrogpt-cursor {
+  0% {cursor: url("../../cursors/samicrogpt/samicrogpt_frames/frame_01.png") 32 32, none;}
+  20% {cursor: url("../../cursors/samicrogpt/samicrogpt_frames/frame_02.png") 32 32, none;}
+  40% {cursor: url("../../cursors/samicrogpt/samicrogpt_frames/frame_03.png") 32 32, none;}
+  60% {cursor: url("../../cursors/samicrogpt/samicrogpt_frames/frame_04.png") 32 32, none;}
+  80% {cursor: url("../../cursors/samicrogpt/samicrogpt_frames/frame_05.png") 32 32, none;}
+  100% {cursor: url("../../cursors/samicrogpt/samicrogpt_frames/frame_06.png") 32 32, none;}
+}
+
+body.elon-effect {
+  border-color: red;
+  font-family: Wingdings;
+  color: red;
+  background: #6d8ebf;
+  background: linear-gradient(176deg, rgba(109, 142, 191, 1) 0%, rgba(158, 0, 26, 1) 99%);
+  background-attachment: fixed;
+}
+
+body.elon-effect * {
+  border-color: red;
+}
+
+body.elon-effect .social-link, body.elon-effect .username {
+  color: red;
+}
+
+.elon span.platform-name, .elon span.username {
+  color: black !important;
+}
+
+body.elon-effect .emoji {
+  font-family: "Wingdings";
+}
+
+body.elon-effect main {
+  background-color: #ff9d9d60;
+}
+
+body.elon-effect #bio {
+  margin-bottom: 0.1em;
+}
+
+body.elon-effect .social-link {
+  background-color: rgb(206, 206, 206);
+}
+
+body.elon-effect .social-link:hover {
+  background-color: #FF0179;
+}
+
+body.elon-effect .social-link:hover, body.elon-effect .social-link:hover .username {
+  color: white;
+}
+
+body.elon-effect .social-link img {
+  filter: invert(90%) brightness(80%);
+}
+
+body.elon-effect a#link-twitter img {
+  filter: invert(0%) brightness(100%);
+}
+
+body.elon-effect a#link-twitter {
+  font-family: "Inter", "Roboto", "Arial", "sans-serif";
+}
+
+body.elon-effect #home-lnk {
+  display: none;
+}
+
+body.elon-effect *:focus-visible {
+  outline: 4px dashed lime !important;
+}
+
+#hell-ambient-audio {
+  visibility: hidden;
+}
+
+#palantir-logo {
+  position: fixed;
+  height: 3em;
+  bottom: 0.6em;
+  right: 0.8em;
+  z-index: 999;
+  filter: drop-shadow(0px 0px 8px #FFFFFF);
+  visibility: hidden;
+  user-select: none;
+}
+
+body.elon-effect #palantir-logo {
+  visibility: visible;
+}
+
+body.elon-effect + html {
+  cursor: url("../../cursors/samicrogpt/samicrogpt_frames/frame_01.png");
+  animation: samicrogpt-cursor 400ms infinite;
+}
+
+.static {
+  display: none;
+}
+
+body.elon-effect .static {
+  display: block;
+  opacity: 0;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  background-image: repeating-radial-gradient(circle at 17% 32%, white, black 0.00085px);
+  animation: static-effect 5s linear infinite !important;
+  transition: all 0.2s;
+}
+
+@keyframes static-effect {
+  from {
+    background-size: 100% 100%;
+  }
+
+  to {
+    background-size: 200% 200%;
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .elon {
+    color: black;
+  }
+
+  .elon.username {
+    color: black;
+  }
+  
+  body.elon-effect {
+    background: #002966;
+    background: linear-gradient(176deg, rgba(0, 41, 102, 1) 0%, rgba(255, 0, 43, 1) 99%);
+    background-attachment: fixed;
+  }
+
+  body.elon-effect main {
+    background-color: #ff707060;
+  }
+
+  body.elon-effect footer {
+    color: rgb(255, 73, 73);
+    font-weight: bolder;
+  }
+
+  body.elon-effect #bio {
+    color: red;
+  }
+
+  body.elon-effect .social-link:not(.elon) {
+    background: #091930;
+    background: linear-gradient(133deg, rgba(9, 25, 48, 1) 0%, rgba(24, 0, 92, 1) 99%);
+  }
+
+  body.elon-effect .social-link img {
+    filter: invert(90%) brightness(60%);
+  }
+}

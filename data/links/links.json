@@ -1,0 +1,278 @@
+{
+  "customStyles": false,
+  "customStylesheetLocation": "/data/links/links_custom_styles.css",
+
+  "defaultIcon": "default.svg",
+  "iconPath": "/assets/media/images/icons/social_icons/",
+
+  "defaultCopyMsg": "Copied!",
+
+  "staticOverlay": {
+    "maxOpacity": 0.9,
+    "step": 0.04,
+    "interval": 8000
+  },
+
+
+  "order": [
+    "link-test",
+    "link-twitter",
+    "link-strawpage",
+    "link-yt",
+    "link-ig",
+    "link-bsky",
+    "copy-xbox",
+    "copy-mc",
+    "copy-discord",
+    "link-tumblr",
+    "link-neocities",
+    "link-blogspot",
+    "link-github",
+    "link-linktree"
+  ],
+
+  "miscData": {
+    "link-twitter": {
+      "shown": true,
+      "xitter": {
+        "enabled": true,
+        "activationKey": "x",
+        "url": "https://www.x.com/stormzulien",
+        "xicon": "twitter_x.svg",
+        "palantirLogo": "/assets/media/images/elonsraeltir/palantir.svg",
+        "hellSound": "/assets/media/audio/hell.mp3"
+      }
+    },
+    "link-strawpage": { "shown": true },
+    "link-yt": { "shown": true },
+    "link-bsky": { "shown": true },
+    "copy-discord": { "shown": true },
+    "link-test": { "shown": false },
+    "link-tumblr": { "shown": true },
+    "link-blogspot": { "shown": false },
+    "link-github": { "shown": true },
+    "link-neocities": { "shown": false },
+    "link-linktree": { "shown": false },
+    "copy-xbox": { "shown": false },
+    "copy-mc": { "shown": false },
+    "link-ig": { "shown": false }
+  },
+
+  "links": [
+
+    {
+      "type": "copy",
+      "id": "link-test",
+      "customStylesClass": "",
+      "name": "Test",
+      "username": "username",
+      "copyContent": "Lorem Ipsum",
+      "copyMsg": "Content Copied",
+      "icon": {
+        "light": null,
+        "dark": null,
+        "altText": null
+      },
+      "title": null
+    },
+
+    {
+      "type": "link",
+      "id": "link-twitter",
+      "customStylesClass": "",
+      "name": "Twitter",
+      "username": "@Stormzulien",
+      "url": "https://www.twitter.com/stormzulien",
+      "icon": {
+        "light": "twitter.svg",
+        "dark": null,
+        "altText": "Twitter Logo"
+      },
+      "title": null
+    },
+
+    {
+      "type": "link",
+      "id": "link-yt",
+      "customStylesClass": "yt-link",
+      "name": "YouTube",
+      "username": "@Stormzulien",
+      "url": "https://www.youtube.com/@stormzulien",
+      "icon": {
+        "light": "youtube_logo.svg",
+        "dark": null,
+        "altText": "YouTube Logo"
+      },
+      "title": "YouTube"
+    },
+
+    {
+      "type": "link",
+      "id": "link-bsky",
+      "customStylesClass": "",
+      "name": "Bluesky",
+      "username": "@stormzulien.bsky.social",
+      "url": "https://stormzulien.bsky.social",
+      "icon": {
+        "light": "bluesky.svg",
+        "dark": null,
+        "altText": "Bluesky Social Logo"
+      },
+      "title": null
+    },
+
+    {
+      "type": "copy",
+      "id": "copy-discord",
+      "customStylesClass": "",
+      "name": "Discord",
+      "username": "stormzulien",
+      "copyContent": "stormzulien",
+      "copyMsg": "Username copied",
+      "icon": {
+        "light": "discord_light.svg",
+        "dark": null,
+        "altText": "Discord Logo"
+      },
+      "title": "Copy Discord username"
+    },
+
+    {
+      "type": "link",
+      "id": "link-tumblr",
+      "customStylesClass": "",
+      "name": "Tumblr",
+      "username": "@stormzulien",
+      "url": "https://stormzulien.tumblr.com/",
+      "icon": {
+        "light": "tumblr_light.svg",
+        "dark": "tumblr_dark.svg",
+        "altText": "Tumblr Logo"
+      },
+      "title": null
+    },
+
+    {
+      "type": "link",
+      "id": "link-strawpage",
+      "customStylesClass": "",
+      "name": "Strawpage",
+      "username": "stormzulien.straw.page",
+      "url": "https://stormzulien.straw.page/",
+      "icon": {
+        "light": "straw_page.png",
+        "dark": null,
+        "altText": "Strawpage Logo"
+      },
+      "title": "My Strawpage!!!"
+    },
+
+    {
+      "type": "link",
+      "id": "link-blogspot",
+      "customStylesClass": "",
+      "name": "Blogspot",
+      "username": "stormzulien.blogspot.com",
+      "url": "https://stormzulien.blogspot.com/",
+      "icon": {
+        "light": "blogger.svg",
+        "dark": null,
+        "altText": "Blogspot Logo"
+      },
+      "title": "I don't use this much"
+    },
+
+    {
+      "type": "link",
+      "id": "link-github",
+      "customStylesClass": "",
+      "name": "GitHub",
+      "username": "Stormzulien",
+      "url": "https://github.com/Stormzulien",
+      "icon": {
+        "light": "github_light.svg",
+        "dark": "github_dark.svg",
+        "altText": "GitHub Logo"
+      },
+      "title": null
+    },
+
+    {
+      "type": "link",
+      "id": "link-linktree",
+      "customStylesClass": "",
+      "name": "Linktree",
+      "username": "Stormzulien",
+      "url": "https://linktr.ee/Stormzulien",
+      "icon": {
+        "light": "linktree.svg",
+        "dark": null,
+        "altText": "Linktree Logo"
+      },
+      "title": null
+    },
+
+    {
+      "type": "link",
+      "id": "link-neocities",
+      "customStylesClass": "",
+      "name": "Neocities",
+      "username": "stormzulien.neocities.org",
+      "url": "https://stormzulien.neocities.org/",
+      "icon": {
+        "light": "neocitieslogo.svg",
+        "dark": null,
+        "altText": "Neocities Logo"
+      },
+      "title": "My Neocities website which I don't use"
+    },
+
+    {
+      "type": "copy",
+      "id": "copy-xbox",
+      "customStylesClass": "",
+      "name": "Xbox",
+      "username": "stormzulien",
+      "copyContent": "stormzulien",
+      "copyMsg": "Username copied",
+      "icon": {
+        "light": "xbox.svg",
+        "dark": "xbox_light.svg",
+        "altText": "Xbox Logo"
+      },
+      "title": "Copy Xbox username"
+    },
+
+    {
+      "type": "copy",
+      "id": "copy-mc",
+      "customStylesClass": "",
+      "name": "Minecraft",
+      "username": "Stormzulien (bedrock & java)",
+      "copyContent": "stormzulien",
+      "copyMsg": "Username/gamertag copied",
+      "icon": {
+        "light": "minecraft.png",
+        "dark": null,
+        "altText": "Minecraft creeper Logo"
+      },
+      "title": "Copy Minecraft username"
+    },
+
+    {
+      "type": "link",
+      "id": "link-ig",
+      "customStylesClass": "",
+      "name": "Instagram",
+      "username": "jaysboxes",
+      "url": "https://www.instagram.com/jaysboxes/",
+      "icon": {
+        "light": "instagram_light.svg",
+        "dark": "instagram_dark.svg",
+        "altText": "Instagram Logo"
+      },
+      "title": "I don't use this"
+    }
+
+  ]
+}

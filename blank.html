@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nothing here...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <style>
+      :root {
+        --theme: #0F1724;
+        --font-color: var(--theme);
+        --bg-color: #FAEAD8;
+        --icon: url("/assets/media/images/icons/page_light.svg");
+      }
+
+      html, body {
+        min-height: 100vh;
+        width: 100vw;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--font-color);
+      }
+
+      body::selection {
+        background-color: rgba(0, 141, 223, 0.616) !important;
+        color: white !important;
+      }
+
+      p {
+        font-size: 1.06em;
+      }
+
+      main {
+        padding-bottom: 1em;
+        text-align: center;
+      }
+
+      #page-icon {
+        height: 3.6em;
+        width: 100%;
+        background-image: var(--icon);
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --font-color: #CCC;
+          --bg-color: var(--theme);
+          --icon: url("/assets/media/images/icons/page_dark.svg");
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="page-icon"></div>
+      <p>This is just a blank page.</p>
+    </main>
+  </body>
+</html>
