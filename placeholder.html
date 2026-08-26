@@ -363,6 +363,10 @@
         }
 
         @media screen and (width < 430px) {
+          .pages {
+            column-gap: 6px;
+          }
+
           div#placeholder-msg {
             padding: 0.6em 0;
             padding-left: 0.4em;
@@ -384,7 +388,7 @@
     <br>
     <main>
       <ul class="pages" aria-label="Navigation links">
-        <!-- <span>Pages:</span> -->
+        <span>Pages:</span>
         <li><a href="#" onclick="home()">Home</a></li>|
         <li><a href="#about" onclick="about()">About</a></li>|
         <li><a href="#talk" target="_parent">Talk</a></li>|
