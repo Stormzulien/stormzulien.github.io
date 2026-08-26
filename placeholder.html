@@ -270,8 +270,7 @@
           height: 100%;
         }
 
-        #about-section {
-          max-width: 25em;
+        #about-section, #talk-section {
           max-width: 25em;
           min-height: 24em;
           max-height: 26em;
@@ -336,6 +335,13 @@
           }
         }
 
+        #talk-section {
+          padding: 0;
+          display: flex;
+          height: 26em;
+          min-width: 25em;
+        }
+
         @media(prefers-color-scheme: dark) {
           html {
             color: white;
@@ -357,7 +363,7 @@
             color: lightblue;
           }
 
-          #about-section {
+          #about-section, #talk-section {
             background-color: #0F0329;
           }
         }
@@ -391,7 +397,7 @@
         <span>Pages:</span>
         <li><a href="#" onclick="home()">Home</a></li>|
         <li><a href="#about" onclick="about()">About</a></li>|
-        <li><a href="#talk" target="_parent">Talk</a></li>|
+        <li><a href="#talk" onclick="talk()">Talk</a></li>|
         <li><a href="/links" target="_parent">Links</a></li>|
         <li><a href="https://stormzulien.straw.page" target="_parent">Strawpage</a></li>
       </ul>
@@ -442,6 +448,9 @@
           <hr>
           <div id="about-img-container"></div>
         </section>
+      </div>
+      <div id="talk-section">
+        <iframe src="https://www5.cbox.ws/box/?boxid=965999&boxtag=2C4rGX" width="100%" height="100%" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
       </div>
     </main>
     <br>
@@ -817,16 +826,25 @@
 
       opacitySlider.on("input", setOpacity);
 
-      function about() {
-        $("#img-container").hide()
-        $("span.credits").hide();
-        $("#about-section").show();
-      }
-
       function home() {
         $("#img-container").show()
         $("span.credits").show();
         $("#about-section").hide();
+        $("#talk-section").hide();
+      }
+
+      function about() {
+        $("#img-container").hide()
+        $("span.credits").hide();
+        $("#about-section").show();
+        $("#talk-section").hide();
+      }
+
+      function talk() {
+        $("#img-container").hide()
+        $("span.credits").hide();
+        $("#about-section").hide();
+        $("#talk-section").show();
       }
 
       // don't look please
@@ -834,6 +852,7 @@
       switch (location.hash) {
         case "#home": home(); break;
         case "#about": about(); break;
+        case "#talk": talk(); break;
         case "#links": location.replace("/links"); break;
         case "#strawpage": location.replace("https://stormzulien.straw.page/"); break;
         default: break;
