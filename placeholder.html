@@ -455,9 +455,9 @@
           <div id="about-img-container"></div>
         </section>
       </div>
-      <div id="talk-section">
+      <!-- <div id="talk-section">
         <iframe src="https://www5.cbox.ws/box/?boxid=965999&boxtag=2C4rGX" height="100%" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-      </div>
+      </div> -->
     </main>
     <br>
     <footer> 
@@ -836,29 +836,29 @@
         $("#img-container").show()
         $("span.credits").show();
         $("#about-section").hide();
-        $("#talk-section").hide();
+        // $("#talk-section").hide();
       }
 
       function about() {
         $("#img-container").hide()
         $("span.credits").hide();
         $("#about-section").show();
-        $("#talk-section").hide();
+        // $("#talk-section").hide();
       }
 
-      function talk() {
+      /* function talk() {
         $("#img-container").hide()
         $("span.credits").hide();
         $("#about-section").hide();
         $("#talk-section").show();
-      }
+      } */
 
       // don't look please
 
       switch (location.hash) {
         case "#home": home(); break;
         case "#about": about(); break;
-        case "#talk": talk(); break;
+        // case "#talk": talk(); break;
         case "#links": location.replace("/links"); break;
         case "#strawpage": location.replace("https://stormzulien.straw.page/"); break;
         default: break;
